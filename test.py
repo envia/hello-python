@@ -14,12 +14,13 @@ class TestHello(unittest.TestCase):
 
     def test_random(self):
         import random
-        try:
-            random.seed(0, 1)
-        except:
-            random.seed(0)
+        import sys
+        random.seed(0)
         r = random.randint(0, 9)
-        self.assertEqual(r, 8)
+        if sys.version_info.major == 2:
+            self.assertEqual(r, 8)
+        if sys.version_info.major == 3:
+            self.assertEqual(r, 6)
 
     def test_tempfile(self):
         import filecmp
