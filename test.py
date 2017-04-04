@@ -14,7 +14,7 @@ class TestHello(unittest.TestCase):
 
     def test_random(self):
         import random
-        random.seed(0)
+        random.seed(1)
         r = random.randint(0, 9)
         self.assertEqual(r, 8)
 
