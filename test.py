@@ -17,9 +17,9 @@ class TestHello(unittest.TestCase):
         import sys
         random.seed(0)
         r = random.randint(0, 9)
-        if sys.version_info.major == 2:
+        if sys.version_info[0] == 2:
             self.assertEqual(r, 8)
-        if sys.version_info.major == 3:
+        if sys.version_info[0] == 3:
             self.assertEqual(r, 6)
 
     def test_tempfile(self):
