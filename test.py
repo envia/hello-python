@@ -12,5 +12,11 @@ class TestHello(unittest.TestCase):
     def test_add(self):
         self.assertEqual(1, 2)
 
+    def test_random(self):
+        import random
+        random.seed(0)
+        r = random.randint(0, 9)
+        self.assertEqual(r, 8)
+
 if __name__ == '__main__':
     unittest.main()
